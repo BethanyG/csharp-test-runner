@@ -29,6 +29,11 @@ namespace Exercism.TestRunner.CSharp.IntegrationTests
 
         private static void NormalizeTestRunResult(TestRunResult testRunResult)
         {
+            if (testRunResult.Tests == null)
+            {
+                return;
+            }
+            
             static int Comparison(TestResult x, TestResult y) => string.Compare(x.Name, y.Name, StringComparison.Ordinal);
             Array.Sort(testRunResult.Tests, Comparison);
         }
@@ -40,7 +45,7 @@ namespace Exercism.TestRunner.CSharp.IntegrationTests
                 IgnoreNullValues = true,
                 PropertyNamingPolicy = null
             };
-            options.Converters.Add(new JsonStringEnumConverter());
+            options.Converters.Add(new JsonStringEnumConverter(JsonNamingPolicy.CamelCase));
             return options;
         }
         
