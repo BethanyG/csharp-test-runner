@@ -1,5 +1,5 @@
 {
   "status": "error",
-  "message": "FakeTest.cs(5,66): error CS0117: 'Fake' does not contain a definition for 'Add'\nFakeTest.cs(7,66): error CS0117: 'Fake' does not contain a definition for 'Sub'",
+  "message": "FakeTests.cs(5,66): error CS0117: 'Fake' does not contain a definition for 'Add'\nFakeTests.cs(7,66): error CS0117: 'Fake' does not contain a definition for 'Sub'",
   "tests": []
 }

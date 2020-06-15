@@ -1,6 +1,6 @@
 using Xunit;
 
-public class FakeTest
+public class FakeTests
 {
     [Fact]
     public void Add_should_add_numbers() =>
@@ -13,15 +13,4 @@ public class FakeTest
     [Fact(Skip = "Remove to run test")]
     public void Mul_should_multiply_numbers() =>
         Assert.Equal(6, Fake.Mul(2, 3));
-}
-
-public class FooTest
-{
-    [Fact(Skip = "Remove to run test")]
-    public void Upper_should_uppercase_string() =>
-        Assert.Equal("HELLO", Foo.Upper("hello"));
-
-    [Fact(Skip = "Remove to run test")]
-    public void Lower_should_lowercase_string() =>
-        Assert.Equal("hello", Foo.Lower("HELLO"));
 }
