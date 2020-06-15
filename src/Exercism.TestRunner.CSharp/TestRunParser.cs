@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -27,8 +28,9 @@ namespace Exercism.TestRunner.CSharp
         private static TestRun FromErrors(IEnumerable<string> errors) =>
             new TestRun
             {
-                Message = TestRunMessage.FromErrors(errors),
-                Status = TestStatus.Error
+                Status = TestStatus.Error,
+                Tests = Array.Empty<TestResult>(),
+                Message = TestRunMessage.FromErrors(errors)
             };
     }
 }
