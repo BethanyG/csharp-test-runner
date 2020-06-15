@@ -45,6 +45,10 @@ namespace Exercism.TestRunner.CSharp.IntegrationTests
             AssertTestResultsAreCorrect("NetCoreApp3.0");
 
         [Fact]
+        public void NetCoreApp3_1() =>
+            AssertTestResultsAreCorrect("NetCoreApp3.1");
+
+        [Fact]
         public void NoTests() =>
             AssertTestResultsAreCorrect("NoTests");
 

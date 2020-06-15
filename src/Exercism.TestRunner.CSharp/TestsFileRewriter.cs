@@ -134,34 +134,28 @@ namespace Exercism.TestRunner.CSharp
                                                     ArgumentList(
                                                         SingletonSeparatedList(
                                                             Argument(
-                                                                IdentifierName("_stringWriter")))))),
-                                        ExpressionStatement(
-                                            InvocationExpression(
-                                                    MemberAccessExpression(
-                                                        SyntaxKind.SimpleMemberAccessExpression,
-                                                        MemberAccessExpression(
-                                                            SyntaxKind.SimpleMemberAccessExpression,
-                                                            MemberAccessExpression(
-                                                                SyntaxKind.SimpleMemberAccessExpression,
-                                                                MemberAccessExpression(
-                                                                    SyntaxKind.SimpleMemberAccessExpression,
-                                                                    IdentifierName("System"),
-                                                                    IdentifierName("Diagnostics")),
-                                                                IdentifierName("Trace")),
-                                                            IdentifierName("Listeners")),
-                                                        IdentifierName("Add")))
-                                                .WithArgumentList(
-                                                    ArgumentList(
-                                                        SingletonSeparatedList(
-                                                            Argument(
-                                                                ObjectCreationExpression(
-                                                                        QualifiedName(
-                                                                            QualifiedName(
-                                                                                IdentifierName("System"),
-                                                                                IdentifierName("Diagnostics")),
-                                                                            IdentifierName("ConsoleTraceListener")))
-                                                                    .WithArgumentList(
-                                                                        ArgumentList())))))))),
+                                                                IdentifierName("_stringWriter")))))))
+                                        .WithCloseBraceToken(
+                                            Token(
+                                                TriviaList(
+                                                    new []{
+                                                        Trivia(
+                                                            IfDirectiveTrivia(
+                                                                ParenthesizedExpression(
+                                                                    BinaryExpression(
+                                                                        SyntaxKind.LogicalOrExpression,
+                                                                        IdentifierName("NETCOREAPP3_0"),
+                                                                        IdentifierName("NETCOREAPP3_1"))),
+                                                                true,
+                                                                false,
+                                                                false)),
+                                                        DisabledText(@"        System.Diagnostics.Trace.Listeners.Add(new System.Diagnostics.ConsoleTraceListener());
+"),
+                                                        Trivia(
+                                                            EndIfDirectiveTrivia(
+                                                                true))}),
+                                                SyntaxKind.CloseBraceToken,
+                                                TriviaList()))),
                             MethodDeclaration(
                                     PredefinedType(
                                         Token(SyntaxKind.VoidKeyword)),
