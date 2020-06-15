@@ -58,7 +58,7 @@ namespace Exercism.TestRunner.CSharp
                                                 IdentifierName("Abstractions")),
                                             IdentifierName("ITestOutputHelper")))
                                     .WithVariables(
-                                        SingletonSeparatedList<VariableDeclaratorSyntax>(
+                                        SingletonSeparatedList(
                                             VariableDeclarator(
                                                 Identifier("_testOutput"))))),
                             FieldDeclaration(
@@ -69,17 +69,17 @@ namespace Exercism.TestRunner.CSharp
                                                 IdentifierName("IO")),
                                             IdentifierName("StringWriter")))
                                     .WithVariables(
-                                        SingletonSeparatedList<VariableDeclaratorSyntax>(
+                                        SingletonSeparatedList(
                                             VariableDeclarator(
                                                 Identifier("_stringWriter"))))),
                             ConstructorDeclaration(
-                                    Identifier("FakeTest"))
+                                    node.Identifier)
                                 .WithModifiers(
                                     TokenList(
                                         Token(SyntaxKind.PublicKeyword)))
                                 .WithParameterList(
                                     ParameterList(
-                                        SingletonSeparatedList<ParameterSyntax>(
+                                        SingletonSeparatedList(
                                             Parameter(
                                                     Identifier("testOutput"))
                                                 .WithType(
@@ -118,7 +118,7 @@ namespace Exercism.TestRunner.CSharp
                                                         IdentifierName("SetOut")))
                                                 .WithArgumentList(
                                                     ArgumentList(
-                                                        SingletonSeparatedList<ArgumentSyntax>(
+                                                        SingletonSeparatedList(
                                                             Argument(
                                                                 IdentifierName("_stringWriter")))))),
                                         ExpressionStatement(
@@ -132,7 +132,7 @@ namespace Exercism.TestRunner.CSharp
                                                         IdentifierName("SetError")))
                                                 .WithArgumentList(
                                                     ArgumentList(
-                                                        SingletonSeparatedList<ArgumentSyntax>(
+                                                        SingletonSeparatedList(
                                                             Argument(
                                                                 IdentifierName("_stringWriter")))))),
                                         ExpressionStatement(
@@ -152,7 +152,7 @@ namespace Exercism.TestRunner.CSharp
                                                         IdentifierName("Add")))
                                                 .WithArgumentList(
                                                     ArgumentList(
-                                                        SingletonSeparatedList<ArgumentSyntax>(
+                                                        SingletonSeparatedList(
                                                             Argument(
                                                                 ObjectCreationExpression(
                                                                         QualifiedName(
@@ -175,7 +175,7 @@ namespace Exercism.TestRunner.CSharp
                                             VariableDeclaration(
                                                     IdentifierName("var"))
                                                 .WithVariables(
-                                                    SingletonSeparatedList<VariableDeclaratorSyntax>(
+                                                    SingletonSeparatedList(
                                                         VariableDeclarator(
                                                                 Identifier("output"))
                                                             .WithInitializer(
@@ -236,7 +236,7 @@ Output was truncated. Please limit to 500 chars.")))))))),
                                                         IdentifierName("WriteLine")))
                                                 .WithArgumentList(
                                                     ArgumentList(
-                                                        SingletonSeparatedList<ArgumentSyntax>(
+                                                        SingletonSeparatedList(
                                                             Argument(
                                                                 IdentifierName("output"))))))))).NormalizeWhitespace());
         }
